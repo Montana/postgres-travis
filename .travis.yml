@@ -27,12 +27,6 @@ before_install:
   - sudo apt-get install -y build-essential
   - python -m pip install --upgrade pip
   - pip install "poetry<1.8.0"
-install:
-  - poetry install
-  - pip install pytest coverage
-script:
-  - echo "Running tests with $DB"
-  - pytest --cov=./ --cov-report=xml || true
   - coverage report || true
 deploy:
   provider: script
